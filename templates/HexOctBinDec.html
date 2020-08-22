@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block title %} HexOctBinDec Project | Project Website {% endblock %}
+
+{% block body %}
+    <style>
+        header{
+            background-color: wheat;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #first-title{
+            text-align: center;
+            margin: 40px 40px;
+            font-size: 30px;
+        }
+        .core{
+            text-align: center;
+            font-size: 30px;
+        }
+        #tombol{
+            border: 3px solid black;
+            font-size: 25px;
+            padding: 10px 30px;
+            width: auto;
+            background-color: gainsboro;
+        }
+        input{
+            width: 40%;
+            height: 40px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 4px;
+            background-color: gainsboro;
+            resize: none;
+            margin: 10px;
+            font-size: 20px;
+        }
+        #tombol:hover {
+            cursor: pointer;
+            background: whitesmoke;
+        }
+    </style>
+    <header>
+        <h1>Hex Oct Bin Dec</h1>
+        <h2>Converter</h2>
+    </header>
+    <p id="first-title">Silahkan masukan data mana yang mau kamu convert</p>
+    <div class="core">
+        <label for="HexType">Hexa Number : </label><br>
+        <input type="text" id="Hex-Type" name="HexType" oninput="Hex()"><br>
+        <label for="OctType">Octal Number : </label><br>
+        <input type="text" id="Oct-Type" name="OctType" oninput="Oct()" ><br>
+        <label for="BinType">Binary Number : </label><br>
+        <input type="text" id="Bin-Type" name="BinType" oninput="Bin()" ><br>
+        <label for="DecType">Decimal Number : </label><br>
+        <input type="text" id="Dec-Type" name="DecType" oninput="Dec()" ><br><br>
+        <button id="tombol" onclick="Reset()">Reset</button>
+    </div>
+    <script src="{{url_for('static', filename='HexOctBinDec.js')}}"></script>
+{% endblock %}

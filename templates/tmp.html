@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %} Brick Project | Project Website {% endblock %}
+
+{% block body %}
+    <style>
+        header {
+            text-align: center;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+        body{
+            align-items: center;
+            justify-content: center;
+            }
+
+        #canvas {
+            background-color: black;
+            border-radius: 5px;
+            }
+
+    </style>
+
+    <header>
+        <h1>Brick Games</h1>
+    </header>
+
+    <span id="buttonAppear"></span>
+
+    <div style="text-align:center;">
+        <canvas id="canvas" width="1000" height="600"></canvas>
+    </div>
+    <script src="{{url_for('static', filename='Brick.js')}}"></script>
+{% endblock %}
