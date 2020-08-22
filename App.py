@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 
-root = Flask(__name__)
+root = Flask(__name__,static_url_path='/static')
 
 @root.route('/')
 def home():

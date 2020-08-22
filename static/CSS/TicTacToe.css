@@ -1,0 +1,68 @@
+header {
+    background-color: greenyellow;
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+body {
+   background-color: green;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Score{
+    margin: 20px auto;
+    border: 5px solid white;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: whitesmoke;
+    font-size: 45px;
+    padding: 15px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+.badge {
+        background: greenyellow;
+        color: black;
+        font-size: 25px;
+        padding: 2px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+}
+#User {
+    position: absolute;
+    top: 25px;
+    left: -37px;
+}
+#Computer {
+    position: absolute;
+    top: 25px;
+    right: -45px;
+}
+
+#Restart-Button {
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: green;
+    border: 3px solid white;
+    border-radius: 10%;
+    width: 10%;
+    height: 50px;
+    margin: 20px;
+}
+
+#Restart-Button:Hover {
+    cursor: pointer;
+    background: rgba(9, 255, 0, 0.897);
+}
+img:hover{
+    cursor: pointer;
+}
+img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

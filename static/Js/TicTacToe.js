@@ -16,7 +16,7 @@ for(var i = 0; i < 9 ; i++){
 }
 
 function click(id){
-    document.getElementById(id).src = document.getElementById("XSIGN").src;
+    document.getElementById(id).src = "/static/image/TicTacToe/X sign.jpg";
     array[parseInt(id)] = 1;
     X[parseInt(id)] = 1;
 }
@@ -27,7 +27,7 @@ function Opponent(tmp){
             array[randomNumber] = parseInt(1);
             O[randomNumber] = parseInt(1);
             console.log(randomNumber);
-            document.getElementById(randomNumber).src = document.getElementById("OSIGN").src;
+            document.getElementById(randomNumber).src = "/static/image/TicTacToe/O sign.jpg";
             break;
         }
     }
@@ -81,7 +81,7 @@ function reset(){
         O[i] = parseInt(0);
     }
     for(var i = 0; i < 9; i++){
-        document.getElementById(i).src = document.getElementById("Blank").src;
+        document.getElementById(i).src = "/static/image/TicTacToe/blank.png";
     }
     tmp = 0;
 }

@@ -3,81 +3,12 @@
 
 {% block title %} TicTacToe Project | Project Website {% endblock %}
 
-
+{% block link %} 
+<link rel="stylesheet" href="/static/CSS/TicTacToe.css"> 
+{% endblock %}
 
 {% block body %}
-    <style>
-    header {
-        background-color: greenyellow;
-        padding: 20px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-    body {
-       background-color: green;
-        color: whitesmoke;
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    .Score{
-        margin: 20px auto;
-        border: 5px solid white;
-        border-radius: 10px;
-        text-align: center;
-        width: 200px;
-        color: whitesmoke;
-        font-size: 45px;
-        padding: 15px 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        position: relative;
-    }
-
-    .badge {
-            background: greenyellow;
-            color: black;
-            font-size: 25px;
-            padding: 2px 10px;
-            font-family: Arial, Helvetica, sans-serif;
-    }
-    #User {
-        position: absolute;
-        top: 25px;
-        left: -37px;
-    }
-    #Computer {
-        position: absolute;
-        top: 25px;
-        right: -45px;
-    }
-
-    #Restart-Button {
-        font-size: 20px;
-        font-weight: bold;
-        color: whitesmoke;
-        background-color: green;
-        border: 3px solid white;
-        border-radius: 10%;
-        width: 10%;
-        height: 50px;
-        margin: 20px;
-    }
-
-    #Restart-Button:Hover {
-        cursor: pointer;
-        background: rgba(9, 255, 0, 0.897);
-    }
-    img:hover{
-        cursor: pointer;
-    }
-    img{
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-           
-    </style>
-    
+ 
     <header>
         <h1>Welcome To The</h1>
         <h1>Tic Tac Toe Game</h1>       
@@ -94,28 +25,23 @@
 
         <div class="game">
             <div class="top">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="0" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="1" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="2" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="0" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="1" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="2" onclick="change(this.id);">
             </div>
             <div class="mid">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="3" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="4" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="5" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="3" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="4" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="5" onclick="change(this.id);">
 
             </div>
             <div class="bot">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="6" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="7" onclick="change(this.id);">
-                <img src="{{url_for('static', filename='blank.png')}}" alt="" id="8" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="6" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="7" onclick="change(this.id);">
+                <img src="/static/image/TicTacToe/blank.png" alt="" id="8" onclick="change(this.id);">
 
             </div>
             <input id="Restart-Button" type="submit" onclick="restart()" name="Restart" value="Restart" >
-        </div>
-        <img id="Blank" style="display:none;" src="{{url_for('static', filename='blank.png')}}" alt="">
-        <img id="XSIGN" style="display:none;" src="{{url_for('static', filename='X sign.jpg')}}" alt="">
-        <img id="OSIGN" style="display:none;" src="{{url_for('static', filename='O sign.jpg')}}" alt="">
-        </div>
-    <script src="{{url_for('static', filename='TicTacToe.js')}}"></script>
+    <script src="/static/Js/TicTacToe.js"></script>
 {% endblock %}
 
