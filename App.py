@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 root = Flask(__name__,static_url_path='/static')
@@ -30,6 +30,15 @@ def Brick():
 @root.route('/project/HexOctBinDec')
 def HexOctBinDec():
     return render_template('HexOctBinDec.html')
+
+@root.route('/project/Testing', methods = ['GET', 'POST'])
+def TestPage():
+    if request.method == "POST":
+        FrontName = request.form['FN']
+        LastName = request.form['LN']
+        Name = FrontName + " " + LastName
+        return render_template('TestResult.html', Name=Name)
+    return render_template('Test.html')
 
 if __name__ == '__main__':
     root.run(debug = True)

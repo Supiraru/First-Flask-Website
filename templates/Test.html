@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %} Testing | Project Website {% endblock %}
+
+{% block body %}
+
+<h1>Put your first name and last name</h1>
+<form action="/project/Testing" method="POST">
+    First Name :<br>
+    <input type="text" name="FN" size="25"> <br>
+    Last Name : <br>
+    <input type="text" name="LN" size="25">
+    <p><input type="submit" value="submit"></p>
+</form>
+
+{% endblock %}
