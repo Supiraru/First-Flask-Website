@@ -73,7 +73,30 @@ def dictFunc():
 
 @root.route('/login',  methods = ['GET', 'POST'])
 def login():
+    if request.method == "POST":
+        UsernameInput = request.form['Username']
+        openDb()
+        cursor.execute("SELECT * FROM Account")
+        for x in cursor:
+            if x[1] == UsernameInput:
+                Name = x[2]
+                closeDb()
+                return render_template('SuccesfulLogin.html', Name = Name)
+        return render_template('Login.html', info = "Wrong Username")
     return render_template('Login.html')
+
+@root.route('/register',  methods = ['GET', 'POST'])
+def register():
+    if request.method == "POST":
+        UsernameInput = request.form['Username']
+        EmailInput = request.form['Email']
+        NameInput = request.form['Name']
+        openDb()
+        cursor.execute("INSERT INTO Account (Username, Name, Email) VALUES (%s, %s, %s)", (UsernameInput, NameInput, EmailInput))
+        conn.commit()
+        closeDb()
+        return render_template('home.html')
+    return render_template('register.html')
     
 
 if __name__ == '__main__':
