@@ -1,7 +1,30 @@
 from flask import Flask, render_template, request
-
+from dictionary import dictionary
+import mysql.connector
 
 root = Flask(__name__,static_url_path='/static')
+root.config['DB_USER'] = 'Aan'
+root.config['DB_PASSWORD'] = 'Abc123de45'
+root.config['DB_NAME'] = 'testdata'
+root.config['DB_HOST'] = 'localhost'
+
+conn = cursor = None
+
+def openDb():
+    global conn, cursor
+    conn = mysql.connector.connect(
+        user = root.config['DB_USER'],
+        password = root.config['DB_PASSWORD'],
+        database = root.config['DB_NAME'],
+        host = root.config['DB_HOST']
+    )
+    cursor = conn.cursor()
+
+def closeDb():
+    global conn, cursor
+    cursor.close()
+    conn.close()
+
 
 @root.route('/')
 def home():
@@ -39,6 +62,19 @@ def TestPage():
         Name = FrontName + " " + LastName
         return render_template('TestResult.html', Name=Name)
     return render_template('Test.html')
+
+@root.route('/project/dictionary', methods = ['GET', 'POST'])
+def dictFunc():
+    if request.method == "POST":
+        UserInput = request.form['UserInput']
+        Meaning = dictionary(UserInput)
+        return render_template('DictResult.html', UserInput=UserInput, Meaning=Meaning)
+    return render_template('Dictionary.html')
+
+@root.route('/login',  methods = ['GET', 'POST'])
+def login():
+    return render_template('Login.html')
+    
 
 if __name__ == '__main__':
     root.run(debug = True)

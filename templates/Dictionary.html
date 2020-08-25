@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title %} Dictionary Project | Project Website {% endblock %}
+
+{% block body %}
+
+<h1>Put The Word You Want to Know the Meaning</h1>
+<form action="/project/dictionary" method="POST">
+    Put the Word Here :<br>
+    <input type="text" name="UserInput" size="25"> <br>
+    
+    <p><input type="submit" value="Search"></p>
+</form>
+
+{% endblock %}
