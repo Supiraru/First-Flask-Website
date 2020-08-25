@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    height: 100vh;
+  }
+  #Verification .container #Verification-row #Verification-column #Verification-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #Verification .container #Verification-row #Verification-column #Verification-box #Verification-form {
+    padding: 20px;
+  }
+  #Verification .container #Verification-row #Verification-column #Verification-box #Verification-form #register-link {
+    margin-top: -85px;
+  }
