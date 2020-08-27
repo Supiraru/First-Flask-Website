@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %} Make Article | Project Website {% endblock %}
+
+{% set Session = Sessioncheck %}
+
+{% block body %}
+    <h1>MAKES YOUR OWN ARTICLES</h1>
+    <h3>{{msg}}</h3>
+    <form action="/article/create" method="POST">
+        Title : <br>
+        <input type="text" name="Title" placeholder="Enter your title">
+        Article Content : <br>
+        <textarea name="Content" cols="30" rows="10" placeholder="Enter your article content"></textarea>
+        <input type="submit" name="submit" class="btn btn-secondary btn-md" value="create & post">
+    </form>
+{% endblock %}

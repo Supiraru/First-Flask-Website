@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %} Articles Content | Project Website {% endblock %}
+
+{% set Session = Sessioncheck %}
+
+{% block body %}
+    <article>
+        <h1>{{Article[3]}}</h1>
+        <h2>created by {{Article[1]}} at {{Article[2]}}</h2>
+        <p>{{Article[4]}}</p>
+    </article>
+{% endblock %}

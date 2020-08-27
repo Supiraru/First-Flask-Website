@@ -1,11 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block title %} Project | Project Website {% endblock %}
-
+{% set Session = Sessioncheck %}
 {% block body %}
 <h1>Project</h1>
     <ul class="list-group">
-        <li class="list-group-item"><a href="project/Snakes">Snakes Games</a></li>
+        <li class="list-group-item"><h3><a href="project/Snakes">Snakes Games</a> </h3><br>
+            <p>This is a classic snake game, you guys have known it.</p> 
+        </li>
         <li class="list-group-item"><a href="project/TicTacToe">TicTacToe Games</a></li>
         <li class="list-group-item"><a href="project/Brick">Brick Games</a></li>
         <li class="list-group-item"><a href="project/HexOctBinDec">HexOctBinDec Converter</a></li>

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %} Articles | Project Website {% endblock %}
+
+{% set Session = Sessioncheck %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Make Your Own Article</h1>
+    <p class="lead">click the button below to make a new article and post it in this website. Make sure you already have an account and login to it. </p>
+    <a href="/article/create"><button type="button" class="btn btn-dark btn-lg">Lets make an article</button></a>
+</div>
+<div>
+    <h1>{{msg}}</h1>
+</div>
+<div>
+    <h3>Articles Timeline: </h3> <br>
+    {% for article in database %}
+        <ul class="list-group">
+            <li class="list-group-item"><a href="/article/{{article[0]}}">{{article[1]}}</a></li>
+        </ul>
+    {% endfor %}
+</div>
+{% endblock %}
