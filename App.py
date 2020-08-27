@@ -112,7 +112,9 @@ def login():
                 sendMail(x[3], message)
                 return redirect(url_for('verification', Sessioncheck = sessionCheck()))
         return render_template('Login.html', info = "Wrong Username", Sessioncheck = sessionCheck())
-    return render_template('Login.html', Sessioncheck = sessionCheck())
+    if request.args.get('info') == None:
+        return render_template('Login.html', Sessioncheck = sessionCheck())
+    return render_template('Login.html', Sessioncheck = sessionCheck(), info = request.args.get('info'))
 
 @root.route('/register',  methods = ['GET', 'POST'])
 def register():
@@ -172,7 +174,7 @@ def MakeArticle():
                 return redirect(url_for("article"), msg = "Article Succesfully created and posted")
         return render_template('MakeArticle.html', Sessioncheck = sessionCheck())
     else:
-        return redirect(url_for("login", Sessioncheck = sessionCheck()))
+        return redirect(url_for("login", Sessioncheck = sessionCheck(), info = "You Have to Login to Create an Article"))
 
 @root.route('/article/<string:id>')
 def ArticleContent(id):
